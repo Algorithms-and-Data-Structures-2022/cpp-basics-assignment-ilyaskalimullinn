@@ -44,6 +44,7 @@ namespace assignment {
   // Task 5
   int arr_sum(int *arr, int length) {
 
+    if (arr == nullptr || length <= 0) return 0;
 
     int result = 0;
 
@@ -94,9 +95,18 @@ namespace assignment {
   // Task 9
   void print_kth_elements(int *arr, int length, int k, std::ostream &os) {
 
-    if (arr == nullptr) os << "Invalid argument: arr\n";
-    if (length <= 0) os << "Invalid argument: length\n";
-    if (k <= 0) os << "Invalid argument: k\n";
+    if (arr == nullptr) {
+      os << "Invalid argument: arr\n";
+      return;
+    }
+    if (length <= 0) {
+      os << "Invalid argument: length\n";
+      return;
+    }
+    if (k <= 0) {
+      os << "Invalid argument: k\n";
+      return;
+    }
 
     int index = 0;
 
